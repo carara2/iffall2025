@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Try by P!nk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+  
+    :root{
+      --bg:#0b0a0a;           
+      --bg-2:#1a0f0c;         
+      --text:#ffeadd;         
+      --muted:#ffc7a3;         
+      --accent:#ff7a18;      
+      --accent-3:#ffd000;     
+      --card:#1a1412;          
+      --radius:18px;
+      --shadow:0 16px 40px rgba(0,0,0,.55), 0 6px 18px rgba(0,0,0,.45);
+      --container:900px;
+    }
+
+    *,*::before,*::after{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0; color:var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
+      background: 
+        radial-gradient(1200px 600px at 10% -20%, rgba(255,122,24,.15), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, rgba(255,60,0,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      background-attachment: fixed;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:""; position:fixed; inset:-10% -10% -10% -10%; pointer-events:none; z-index:0;
+      background:
+        radial-gradient(60px 30px at 20% 10%, rgba(255,160,64,.18), transparent 40%),
+        radial-gradient(40px 20px at 70% 15%, rgba(255,110,48,.15), transparent 45%),
+        radial-gradient(80px 35px at 40% 30%, rgba(255,208,0,.10), transparent 50%);
+      filter: blur(18px) saturate(120%);
+      animation: shimmer 9s ease-in-out infinite alternate;
+    }
+    @keyframes shimmer{ to { transform: translateY(-8px) scale(1.01); filter: blur(22px) saturate(130%);} }
+
+    .container{ width:min(100%, var(--container)); margin:0 auto; padding-inline:clamp(16px,4vw,28px); position:relative; z-index:1; }
+
+    .site-header{ position:sticky; top:0; z-index:10; backdrop-filter: blur(10px);
+      background: color-mix(in oklab, var(--bg-2) 80%, transparent);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .header-inner{ display:flex; align-items:center; justify-content:center; padding:18px 0; }
+
+    h1{
+      font-family: "Bebas Neue", system-ui, sans-serif;
+      font-size: clamp(40px, 6vw, 80px);
+      letter-spacing: .02em; line-height:1; margin: 0;
+      background: linear-gradient(180deg, #fff7ef 0%, #ffe2c8 40%, #ffd000 70%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      text-shadow:
+        0 0 6px rgba(255,210,160,.45),
+        0 0 16px rgba(255,124,32,.35),
+        0 0 28px rgba(255,60,0,.28),
+        0 0 46px rgba(255,60,0,.20);
+      animation: flicker 4.2s ease-in-out infinite both;
+    }
+    @keyframes flicker{
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { text-shadow: 0 0 6px rgba(255,210,160,.45), 0 0 16px rgba(255,124,32,.35), 0 0 28px rgba(255,60,0,.28), 0 0 46px rgba(255,60,0,.20); filter: drop-shadow(0 2px 16px rgba(255,120,32,.25)); }
+      20%, 24%, 55% { text-shadow: 0 0 2px rgba(255,210,160,.3), 0 0 8px rgba(255,124,32,.28), 0 0 10px rgba(255,60,0,.22), 0 0 16px rgba(255,60,0,.16); }
+    }
+
+   .lyrics-card{
+      background: linear-gradient(180deg, color-mix(in oklab, var(--card) 85%, transparent), rgba(20,12,10,.35));
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 122, 24, .2);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      position:relative; overflow:hidden;
+    }
+
+    .lyrics-card::before{
+      content:""; position:absolute; left:-10%; right:-10%; top:-2px; height:10px; z-index:2;
+      background: repeating-linear-gradient( 90deg,
+        rgba(255, 208, 0, .8) 0 6px,
+        rgba(255, 122, 24, .85) 6px 12px,
+        rgba(255, 60, 0, .85) 12px 18px,
+        rgba(255, 0, 0, .85) 18px 24px );
+      filter: blur(6px) saturate(120%);
+      opacity:.85; animation: wave 6s linear infinite;
+    }
+    @keyframes wave{ to { transform: translateX(12%); } }
+
+    
+    .embers{ position:absolute; inset:0; pointer-events:none; z-index:1; }
+    .ember{ position:absolute; width:3px; height:3px; border-radius:50%; background: radial-gradient(circle, #ffd000 0%, #ff7a18 60%, #ff3c00 100%); opacity:.75; filter: blur(.2px); animation: rise linear infinite; }
+   
+    @keyframes rise{ from{ transform: translateY(10px) scale(.9); opacity: .0; } 20%{opacity:.7;} to{ transform: translateY(-120vh) scale(1.4); opacity:0; } }
+
+    
+    .stanza{ margin: 22px 0 18px; padding:16px; border-radius:12px; border:1px solid rgba(255,124,32,.18);
+      background: linear-gradient(180deg, rgba(255,96,0,.08), rgba(255,96,0,.02));
+    }
+    .label{ font-weight:800; color: var(--muted); text-transform:uppercase; letter-spacing:.18em; font-size:.85rem; display:inline-flex; align-items:center; gap:8px; }
+
+    .line{ margin:.35rem 0; font-size:1.05rem; }
+    .line strong{ color: var(--accent-3); }
+
+    .stanza.chorus{ border-color: rgba(255,208,0,.35); background: linear-gradient(180deg, rgba(255,208,0,.12), rgba(255,110,0,.06)); box-shadow: 0 4px 24px rgba(255,180,0,.12) inset; }
+
+    footer{ color:#ffd9c6; text-align:center; font-size:.8rem; padding:36px 0 48px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>Try by P!nk</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="lyrics-card">
+      <div class="embers" aria-hidden="true">
+        <span class="ember" style="left:6%; bottom:-10px; animation-duration:16s; animation-delay:-2s;"></span>
+        <span class="ember" style="left:18%; bottom:-10px; animation-duration:19s; animation-delay:-6s;"></span>
+        <span class="ember" style="left:28%; bottom:-10px; animation-duration:14s; animation-delay:-4s;"></span>
+        <span class="ember" style="left:40%; bottom:-10px; animation-duration:23s; animation-delay:-7s;"></span>
+        <span class="ember" style="left:52%; bottom:-10px; animation-duration:17s; animation-delay:-3s;"></span>
+        <span class="ember" style="left:64%; bottom:-10px; animation-duration:21s; animation-delay:-8s;"></span>
+        <span class="ember" style="left:76%; bottom:-10px; animation-duration:18s; animation-delay:-5s;"></span>
+        <span class="ember" style="left:88%; bottom:-10px; animation-duration:20s; animation-delay:-9s;"></span>
+      </div>
+
+      <div class="stanza verse">
+        <div class="label">[Verse 1]</div>
+        <p class="line">Ever wonder about what he's doing</p>
+        <p class="line">How it all turned to lies?</p>
+        <p class="line">Sometimes I think that it's better</p>
+        <p class="line">To never ask why</p>
+      </div>
+
+      <div class="stanza chorus">
+        <div class="label">[Chorus]</div>
+        <p class="line">Where there is desire, there is gonna be a flame</p>
+        <p class="line">Where there is a flame, someone's bound to get burned</p>
+        <p class="line">But just because it burns doesn't mean you're gonna die</p>
+        <p class="line">You've gotta get up and try, try, try</p>
+        <p class="line">Gotta get up and try, try, try</p>
+        <p class="line">You gotta get up and try, try, try</p>
+      </div>
+
+      <div class="stanza bridge">
+        <div class="label">[Bridge]</div>
+        <p class="line">Eh, eh, eh</p>
+      </div>
+
+      <div class="stanza verse">
+        <div class="label">[Verse 2]</div>
+        <p class="line">Funny how the heart can be deceiving</p>
+        <p class="line">More than just a couple times</p>
+        <p class="line">Why do we fall in love so easy?</p>
+        <p class="line">Even when it's not right</p>
+      </div>
+
+      <div class="stanza chorus">
+        <div class="label">[Chorus]</div>
+        <p class="line">Where there is desire, there is gonna be a flame</p>
+        <p class="line">Where there is a flame, someone's bound to get burned</p>
+        <p class="line">But just because it burns doesn't mean you're gonna die</p>
+        <p class="line">You've gotta get up and try, try, try</p>
+        <p class="line">Gotta get up and try, try, try</p>
+        <p class="line">You gotta get up and try, try, try</p>
+      </div>
+
+      <div class="stanza verse">
+        <div class="label">[Verse 3]</div>
+        <p class="line">Ever worried that it might be ruined</p>
+        <p class="line">And does it make you wanna cry?</p>
+        <p class="line">When you're out there doing what you're doing</p>
+        <p class="line">Are you just getting by?</p>
+        <p class="line">Tell me, are you just getting by, by, by?</p>
+      </div>
+
+      <div class="stanza chorus">
+        <div class="label">[Chorus]</div>
+        <p class="line">Where there is desire, there is gonna be a flame</p>
+        <p class="line">Where there is a flame, someone's bound to get burned</p>
+        <p class="line">But just because it burns doesn't mean you're gonna die</p>
+        <p class="line">You've gotta get up and try, try, try</p>
+        <p class="line">Gotta get up and try, try, try</p>
+        <p class="line">You gotta get up and try, try, try</p>
+        <p class="line">Gotta get up and try, try, try</p>
+        <p class="line">Gotta get up and try, try, try</p>
+        <p class="line">You gotta get up and try, try, try</p>
+        <p class="line">Gotta get up and try, try, try</p>
+      </div>
+
+      <div class="stanza outro">
+        <div class="label">[Outro]</div>
+        <p class="line">You gotta get up and try, try, try</p>
+        <p class="line">Gotta get up and try, try, try</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
