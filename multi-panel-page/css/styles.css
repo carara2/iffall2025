@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Archivo Narrow', sans-serif;
+    padding: 0;
+    min-width: 100%;
+    color: black;
+}
+
+header {
+    text-align: center;
+    padding-top: 166px;
+    padding-bottom: 188px;
+    background-image:url(https://singersroom.com/wp-content/uploads/2023/05/Bruno-Mars-Artist.jpg);
+    background-size: cover;
+    width: 100%;
+    min-width: 960px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 80px;
+    line-height: 1;
+}
+
+h2 {
+    margin: 0;
+    line-height: 1;
+    margin-top: 16px;
+    font-size: 30px;
+}
+
+.panel-1 {
+    background-color:rgb(234, 234, 234);
+    padding: 48px 0 58px 0;
+    display: block;
+    width: 100%;
+    min-width: 960px;
+}
+
+.content {
+    width: 960px;
+    margin: auto;
+    gap: 2px;
+}
+
+.panel-1 p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: -2px;
+}
+
+#gaga {
+    width: 400px;
+    height: 300px;
+    float: right;
+    border: white;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+section h1 {
+    text-align: center; 
+    font-size: 40px;
+    margin-bottom: 38px;
+}
+
+.panel-2 {
+    background-color:white;
+    padding: 48px 0 58px 0;
+    width: 100%;
+    min-width: 960px;
+}
+
+.panel-2 img {
+    width: 200px;
+    height: 150px;
+    float: left;
+    margin-bottom: 24px;
+}
+
+ol {
+    width: 960px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+}
+
+ol li {
+    width: 100%;
+    list-style: none;
+    
+}
+
+.image-title{
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 212px;
+    margin-bottom: 7px;
+}
+
+.image-caption{
+    padding-right: 24px;
+    font-size: 18px;
+    padding-left: 212px;
+    line-height: 1.4;
+}
+
+.panel-3 {
+    background-color: rgb(248, 248, 248);
+    padding: 30px 0 74px 0;
+    width: 100%;
+    min-width: 960px;
+    text-align: center;
+}
+
+.container{
+    width: 720px;
+    margin: auto;
+}
+
+.panel-3 p{
+    font-size: 26px;
+    line-height: 1.4;
+}
+
+footer {
+    background-color: white;
+    min-width: 960px;
+    width: 100%;
+    padding: 40px 0 40px 0;
+}
+
+footer p {
+    width: 960px;
+    margin: auto;
+    font-size: 18px;
+}
