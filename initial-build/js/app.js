@@ -40,7 +40,7 @@ document.querySelectorAll(".flavor-tile").forEach(tile => {
 
     const files = flavorData[flavor] || [];
     subGrid.innerHTML = files.map(file =>
-      `<img src="images 2/${file}" alt="${flavor} sub-flavor">`
+      `<img src="images2/${file}" alt="${flavor} sub-flavor">`
     ).join(""); 
 
     const flavorData2 = {
