@@ -1,0 +1,102 @@
+body {
+    background: #f7f4e8;
+    font-family: "Archivo Narrow", sans-serif;
+    color: #e1151c;
+    margin: 0;
+}
+
+.wrap { width: min(1100px, 90%); margin: 3rem auto; }
+
+.site-header{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; padding:.75rem 1rem; border-bottom:1px solid var(--line);
+    position:sticky; top:0; background:var(--bg); z-index:10;
+}
+.brand img{ height:28px; display:block }
+.site-nav a{
+    color:#8c8c8c; text-decoration:none; margin-left:1rem; font-weight:600;
+    letter-spacing:.02em;
+}
+.site-nav a.is-active, .site-nav a:hover{ color:var(--ink) }
+
+.page-title { 
+    font-family: "Varela Round", sans-serif;
+    text-align: center; margin-bottom: 2rem; 
+}
+
+.flavor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.flavor-tile img {
+    width: 100%; border-radius: 20px; transition: transform .2s;
+}
+.flavor-tile:hover img { transform: scale(1.06); cursor: pointer; }
+
+.modal.hidden, .overlay.hidden { display: none; }
+
+.overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.45);
+    z-index: 50;
+}
+
+.modal {
+    position: fixed; inset: 0; display: flex; justify-content: center; align-items: center;
+    z-index: 60;
+}
+
+.modal-content {
+    background: #fff; padding: 2rem; border-radius: 18px; max-width: 500px; width: 90%;
+    text-align: center; position: relative;
+}
+
+.close-modal {
+    position: absolute; top: 12px; right: 12px;
+    background: none; border: none; font-size: 2rem; cursor: pointer;
+}
+
+.modal-main-img { width: 200px; margin-bottom: 1.5rem; }
+
+.subflavor-grid {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
+}
+
+.subflavor-grid img {
+    width: 110px; border-radius: 50%;
+    transition: transform .2s;
+}
+.subflavor-grid img:hover { transform: scale(1.12); }
+
+.hidden { display:none; }
+
+.overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:90;
+}
+
+.modal{
+    position:fixed; inset:auto 0 0 0; /* mobile bottom sheet feel */
+    max-width:980px; margin:6vh auto; background:#fff; padding:1.25rem;
+    border-radius:14px; z-index:100; box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+@media (min-width:700px){ .modal{ inset:0; height:fit-content } }
+
+.close-modal{
+    position:absolute; top:.5rem; right:.75rem; font-size:2rem;
+    background:none; border:0; cursor:pointer; line-height:1;
+}
+
+.modal-figure{ text-align:center; margin:0 0 1rem }
+#modal-main-img{ width:180px; height:180px; object-fit:cover; }
+
+.subgrid{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+    gap:.75rem;
+}
+.subgrid img{ width:100%; height:120px; object-fit:cover; border-radius:10px; }
+
+.site-footer{
+    text-align:center; color:#8c8c8c; padding:2.5rem 1rem;
+    border-top:1px solid var(--line);
+}
