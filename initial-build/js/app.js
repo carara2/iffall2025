@@ -21,10 +21,6 @@ const flavorData = {
     "mm-sparkling": ["MMSparkling-Lemonade.png"],
     "mm-lemonade": ["MMLemonades_Lemonade_200.png","MMLemonades_LemonLimeLemonade_200.png","MMLemonades_OrangeLemonade_200.png", "MMLemonades_StrawberryLemonade_200.png"],
     "mm-lemonade-zero": ["MMLemonadesZero_LemonLimeLemonade_200.png","MMLemonadesZero_OrangeLemonade_200.png","MMLemonadesZero_StrawberryLemonade_200.png"],
-    powerade: ["Powerade_Cherry_200.png","Powerade_FruitPunch_200.png","Powerade_Lemon_200.png","Powerade_Lime_200.png","Powerade_Orange_200.png"],
-    "powerade-zero": ["PoweradeZero_Cherry_200.png","PoweradeZero_FruitPunch_200.png","PoweradeZero_Lemon_200.png","PoweradeZero_Lime_200.png","PoweradeZero_Orange_200.png"],
-    "mm-drinks": ["MMDrinks_Limeade_200.png","MMDrinks_Orange_200.png","MMDrinks_Peach_200.png"],
-    "mm-drinks-zero": ["MMDrinksZero_Limeade_200.png","MMDrinksZero_Orange_200.png","MMDrinksZero_Peach_200.png"],
 };
 
 
@@ -43,6 +39,18 @@ document.querySelectorAll(".flavor-tile").forEach(tile => {
     modalMainImg.alt = mainImg.getAttribute("alt");
 
     const files = flavorData[flavor] || [];
+    subGrid.innerHTML = files.map(file =>
+      `<img src="images 2/${file}" alt="${flavor} sub-flavor">`
+    ).join(""); 
+
+    const flavorData2 = {
+    powerade: ["Powerade_Cherry_200.png","Powerade_FruitPunch_200.png","Powerade_Lemon_200.png","Powerade_Lime_200.png","Powerade_Orange_200.png"],
+    "powerade-zero": ["PoweradeZero_Cherry_200.png","PoweradeZero_FruitPunch_200.png","PoweradeZero_Lemon_200.png","PoweradeZero_Lime_200.png","PoweradeZero_Orange_200.png"],
+    "mm-drinks": ["MMDrinks_Limeade_200.png","MMDrinks_Orange_200.png","MMDrinks_Peach_200.png"],
+    "mm-drinks-zero": ["MMDrinksZero_Limeade_200.png","MMDrinksZero_Orange_200.png","MMDrinksZero_Peach_200.png"],
+};
+
+const files2 = flavorData2[flavor] || [];
     subGrid.innerHTML = files.map(file =>
       `<img src="images/${file}" alt="${flavor} sub-flavor">`
     ).join("");
