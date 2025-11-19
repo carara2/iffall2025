@@ -1,0 +1,202 @@
+:root{
+    --ink:#e1151c;
+    --text:#2a2a2a;
+    --bg:#f7f4e9;
+    --line:#e9ded3;
+    --shadow:0 10px 28px rgba(0,0,0,.08);
+    --radius:24px;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+body {
+    background: var(--bg);
+    font-family: "Inria Sans", sans-serif;
+    color: var(--ink);
+    margin: 0;
+}
+
+.site-header{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:2rem;
+    padding:.9rem 1.75rem;
+    border-bottom:2px solid var(--ink);
+    background:var(--bg);
+    position:sticky;
+    top:0;
+    z-index:20;
+    font-family: "Inria Sans", sans-serif;
+    font-style: bold;
+}
+
+.brand img{
+    height:30px;
+    display:block;
+}
+
+.site-nav{
+    display:flex;
+    gap:1.75rem;
+    font-size:.95rem;
+    text-transform:lowercase;
+    letter-spacing:.06em;
+}
+
+.site-nav a{
+    color:#8c8c8c;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.site-nav a.is-active,
+.site-nav a:hover{
+    color:var(--ink);
+}
+
+.wrap { width: min(1100px, 90%); margin: 3rem auto; }
+
+.page-title { 
+    font-family: "Varela Round", sans-serif;
+    text-align: center; margin-bottom: 2rem; 
+}
+
+.flavor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.flavor-tile {
+    border: none;                
+    outline: none;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.flavor-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+}
+
+.flavor-tile img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px; 
+    background: none;    
+}
+
+.modal.hidden, .overlay.hidden { display: none; }
+
+.overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.45);
+    z-index: 50;
+}
+
+.modal {
+    position: fixed; inset: 0; display: flex; justify-content: center; align-items: center;
+    z-index: 60;
+}
+
+.modal-content {
+    background: #fff; padding: 2rem; border-radius: 18px; max-width: 500px; width: 90%;
+    text-align: center; position: relative;
+}
+
+.close-modal {
+    position: absolute; top: 12px; right: 12px;
+    background: none; border: none; font-size: 2rem; cursor: pointer;
+}
+
+.modal-main-img { width: 200px; margin-bottom: 1.5rem; }
+
+.subflavor-grid {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+.subflavor-grid img {
+    width: 110px; border-radius: 50%;
+    transition: transform .2s;
+}
+.subflavor-grid img:hover { transform: scale(1.12); }
+
+.hidden { display:none; }
+
+.overlay{
+    position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:90;
+}
+
+.modal{
+    position:fixed; inset:auto 0 0 0; /* mobile bottom sheet feel */
+    max-width:980px; margin:6vh auto; background:#fff; padding:1.25rem;
+    border-radius:14px; z-index:100; box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+@media (min-width:700px){ .modal{ inset:0; height:fit-content } }
+
+.close-modal{
+    position:absolute; top:.5rem; right:.75rem; font-size:2rem;
+    background:none; border:0; cursor:pointer; line-height:1;
+}
+
+.modal-figure{ text-align:center; margin:0 0 1rem }
+#modal-main-img{ width:180px; height:180px; object-fit:cover; }
+
+.subgrid{
+    display:flex; grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5rem;
+    gap:.75rem;
+}
+.subgrid img{ width:100%; height:120px; object-fit:cover; border-radius:10px; }
+
+.site-footer{
+    text-align:center; color:#8c8c8c; padding:2.5rem 1rem;
+    border-top:1px solid var(--line);
+}
+
+.flavor-tile.coke { background:#C90000; }           
+.flavor-tile.diet-coke { background:#CCCCCC; }      
+.flavor-tile.coke-zero { background:#C00000; }     
+
+.flavor-tile.sprite { background:#009e52; }          
+.flavor-tile.sprite-zero { background:#037338 }
+
+.flavor-tile.pibb { background:#6D0910; }            
+.flavor-tile.pibb-zero { background:#858E96; }
+
+.flavor-tile.fanta { background:#B93B0F; }          
+.flavor-tile.fanta-zero { background:#D64613; }
+
+.flavor-tile.drpepper { background:#7F0021; }
+.flavor-tile.drpepper-diet { background:#D9D9D9; }
+
+.flavor-tile.mello-yello { background:#DBB701; }
+.flavor-tile.mello-yello-zero { background:#342B00; }
+
+.flavor-tile.vitaminwater { background:#8F2C89; }
+
+.flavor-tile.hi-c { background:#D4D200; }
+
+.flavor-tile.seagrams { background:#64A31B; }
+.flavor-tile.seagrams-zero { background:#BCBDBA; }
+
+.flavor-tile.barqs-cream-soda { background:#D9BE89; }
+.flavor-tile.barqs-cream-soda-zero { background:#E2D8BE; }
+
+.flavor-tile.mm-lemonade { background:#D9BE89; }
+.flavor-tile.mm-lemonade-zero { background:#ADA76C; }
+.flavor-tile.mm-drinks { background:#A30236; }
+.flavor-tile.mm-drinks-zero { background:#A23349; }
+
+.flavor-tile.powerade { background:#3D3C01; }
+.flavor-tile.powerade-zero { background:#D1D1D1; }
