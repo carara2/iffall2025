@@ -1,0 +1,103 @@
+:root{
+    --ink:#e1151c;                   
+    --text:#222;                  
+    --bg:#f7f4e9;                    
+    --line:#e9ded3;                  
+    --shadow:0 10px 28px rgba(0,0,0,.08);
+    --radius:24px;                   
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    font-family: "Inria Sans", sans-serif;
+    line-height:1.45;
+    color:var(--text);
+    background:var(--bg);
+}
+
+.site-header{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;     
+    gap:2rem;
+    padding:.9rem 1.75rem;
+    border-bottom:2px solid var(--ink);   
+    background:var(--bg);
+    position:sticky;
+    top:0;
+    z-index:20;
+    font-family: "Inria Sans", sans-serif;
+    font-style: bold;
+}
+
+.brand img{
+    height:30px;
+    display:block;
+}
+
+.site-nav{
+    display:flex;
+    gap:1.75rem;
+    font-size:.95rem;
+    text-transform:lowercase;
+    letter-spacing:.06em;
+}
+
+.site-nav a{
+    color:#8c8c8c;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.site-nav a.is-active,
+.site-nav a:hover{
+    color:var(--ink);               
+}
+
+.wrap{ width:min(1180px, 92vw); margin:2rem auto;}
+.row{ display:grid; gap:2rem; align-items:center; margin:2.2rem 0;}
+.row-hero{ grid-template-columns: 1.1fr 1fr;}
+.row-tech{ grid-template-columns: 1fr 1.1fr;}
+.row-full{ grid-template-columns: 1fr;}
+
+.col{ min-width:0 }
+.col-media{ justify-self:center}
+
+.page-title{
+    font-family: "Varela Round", sans-serif;
+    margin:0 0 .75rem 0;
+    color:var(--ink);
+    font-size: clamp(2.2rem, 4.2vw + 1rem, 4.8rem);
+    letter-spacing:.02em;
+    line-height:.95;
+}
+
+
+p{ margin:.75rem 0; }
+
+.frame{
+    width:100%; height:auto; display:block; background:#fff;
+    border:14px solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+.frame-wide{ border-width:16px }
+
+.site-footer{
+    text-align:center; color:#8c8c8c; padding:2.5rem 1rem;
+    border-top:1px solid var(--line);
+}
+
+@media (max-width: 980px){
+    .row-hero, .row-tech{ grid-template-columns: 1fr }
+    .col-media{ order:-1 }             
+    .page-title{ text-align:left }
+    .wrap{ margin:1.25rem auto }
+}
+
+@media (max-width: 560px){
+    .site-nav a{ margin-left:.75rem }
+  .frame{ border-width: 10px; border-radius: 18px }
+}
